@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QR Code Generator — free, private, no sign-up</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="controls">
+      <h1>QR Code Generator</h1>
+      <p class="intro">Type any link or text, get a QR code, download the PNG. Everything runs in your browser — your text never leaves your device.</p>
+
+      <h2>Your text or link</h2>
+      <textarea id="textInput" rows="3" placeholder="https://example.com or any text">https://github.com/motivationp81-star</textarea>
+
+      <h2>Size</h2>
+      <div class="row" id="sizeRow">
+        <button data-size="256" class="pick">256 px</button>
+        <button data-size="512" class="pick active">512 px</button>
+        <button data-size="1024" class="pick">1024 px</button>
+      </div>
+
+      <h2>Colours</h2>
+      <div class="row colors">
+        <label>Code <input type="color" id="darkColor" value="#111111" /></label>
+        <label>Background <input type="color" id="lightColor" value="#ffffff" /></label>
+      </div>
+
+      <div class="row actions">
+        <button id="downloadBtn" class="primary">Download PNG</button>
+      </div>
+      <p id="status" class="status"></p>
+    </section>
+
+    <section class="preview">
+      <div id="stage" class="stage"><div id="qrBox"></div></div>
+      <p class="hint">Tip: print size is best at 1024 px. Test your code with a phone before printing lots of copies.</p>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
